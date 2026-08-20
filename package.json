@@ -18,7 +18,9 @@
     "e2e:ui": "playwright test --ui",
     "build:index": "node build.js",
     "build:demo": "rm -rf dist/ && ng build ng2-date-picker-demo --configuration production && npm run build:index",
-    "release": "npm run build:lib && cd dist/ng2-date-picker && npm publish"
+    "pack:lib": "npm run build:lib && npm pack ./dist/ng2-date-picker",
+    "release": "npm run pack:lib",
+    "release:github": "npm run pack:lib && node scripts/publish-github-release.js"
   },
   "repository": {
     "type": "git",

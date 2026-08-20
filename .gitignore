@@ -37,6 +37,7 @@ testem.log
 Thumbs.db
 
 dist
+/ng2-date-picker-*.tgz
 bin.tgz
 /test-results/
 /playwright-report/

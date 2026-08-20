@@ -1,6 +1,6 @@
 # Date Picker  
 This is a configurable date-picker build for Angular applications.  
-Supports latest (Angular 15) version. For older versions please checkout the CHANGELOG.md file.
+Supports Angular 22. For older versions please checkout the CHANGELOG.md file.
 
 [DEMO](https://wondrous-crostata-172891.netlify.app/)  
 
@@ -21,17 +21,43 @@ Supports latest (Angular 15) version. For older versions please checkout the CHA
 ![Imgur](https://i.imgur.com/y37UGkQ.png)  
 
   
-## Installation:  
-1. Download from npm:  
-`npm install ng2-date-picker --save` 
-2. Import the `DpDatePickerModule` module:    
+## Installation:
+
+Build and upload a GitHub Release locally:
+
+```bash
+npm run release:github
+```
+
+The command creates `ng2-date-picker-22.0.0.tgz` locally and uploads it to the `v22.0.0` GitHub Release. Before the first upload, authenticate with GitHub CLI and push the matching tag:
+
+```bash
+gh auth login
+git tag v22.0.0
+git push origin v22.0.0
+npm run release:github
+```
+
+Install the package in another project from GitHub with:
+
+```bash
+npm install https://github.com/Smartbank/angular-datepicker/releases/download/v22.0.0/ng2-date-picker-22.0.0.tgz --save
+```
+
+For local-only testing, install the generated tarball from a sibling project:
+
+```json
+"ng2-date-picker": "file:../angular-datepicker/ng2-date-picker-22.0.0.tgz"
+```
+
+1. Import the `DpDatePickerModule` module:
  `import {DpDatePickerModule} from 'ng2-date-picker';` 
-3. Add `DpDatePickerModule` to your module imports:    
+2. Add `DpDatePickerModule` to your module imports:
 
 ```ts  
  @NgModule({ ... imports: [ ... DpDatePickerModule ] })
  ```  
-4. Add `@import '~@angular/cdk/overlay-prebuilt.css';` to your global styles (usually styles.(scss/sass/css/less). You could also add it via the angular.json file under the styles attribute:
+3. Add `@import '~@angular/cdk/overlay-prebuilt.css';` to your global styles (usually styles.(scss/sass/css/less). You could also add it via the angular.json file under the styles attribute:
 ```
  "projects": {
     "your-project": {
