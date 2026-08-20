@@ -3,11 +3,21 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/lib",
+    "ignoreDeprecations": "6.0",
+    "strict": false,
     "declaration": true,
     "declarationMap": true,
     "inlineSources": true,
     "esModuleInterop": true,
     "types": []
+  },
+  "angularCompilerOptions": {
+    "extendedDiagnostics": {
+      "checks": {
+        "nullishCoalescingNotNullable": "suppress",
+        "optionalChainNotNullable": "suppress"
+      }
+    }
   },
   "exclude": [
     "src/test.ts",
